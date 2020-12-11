@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### ELECTRON
+- https://www.npmjs.com/package/electron-packager
+- https://github.com/electron-userland/electron-installer-dmg
+- chmod -R 755 electron-christmas-darwin-x64 
+- npm run electron-installer-dmg electron-christmas-darwin-x64/electron-christmas.app ElectronChristmas
+
+
+- old shit: 
+//    "build-electron": "react-scripts build && electron-packager ./build",
+//    "make-dmg": "electron-installer-dmg electron-christmas-darwin-x64/electron-christmas.app ElectronChristmas"
+
+
+"make-dmg": "npm run electron-installer-dmg /out/ELECTRON CHRISTMAS-darwin-x64/ELECTRON CHRISTMAS.app ElectronChristmas"
