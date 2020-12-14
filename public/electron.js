@@ -3,6 +3,8 @@ const path = require("path");
 const { app, BrowserWindow } = require("electron");
 const isDev = require("electron-is-dev");
 
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
+
 // Conditionally include the dev tools installer to load React Dev Tools
 let installExtension, REACT_DEVELOPER_TOOLS;
 
@@ -23,16 +25,19 @@ function createWindow() {
         width: 960,
         height: 720,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            enableRemoteModule: true,
+            webSecurity : false
         }
     });
 
-    // and load the index.html of the app.
+  //  and load the index.html of the app.
     win.loadURL(
         isDev
             ? "http://localhost:3000"
             : `file://${path.join(__dirname, "../build/index.html")}`
     );
+
 
     // Open the DevTools.
     if (isDev) {
